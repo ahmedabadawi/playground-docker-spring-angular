@@ -1,0 +1,25 @@
+version: '3'
+services:
+  messaging-service:
+    restart: always
+    container_name: messaging-service
+    image: playground/messaging-service
+    ports:
+      - 9901:8080
+    expose:
+      - "8080"
+    networks:
+      - app-network
+  notifications-service:
+    restart: always
+    container_name: notifications-service
+    image: playground/notifications-service
+    ports:
+      - 9902:8080
+    expose:
+      - "8080"
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
