@@ -10,5 +10,7 @@ public class MessagesResponse {
 	public List<Message> getMessages() { return messages; }
 	public void setMessages(List<Message> messages) { this.messages = messages; }
 	
-	public int getCount() { return messages.size(); }
+	public int getCount() { 
+		return messages != null ? messages.size() : 0;
+	}
 }
