@@ -3,9 +3,9 @@ services:
   messaging-service:
     restart: always
     container_name: messaging-service
-    image: playground/messaging-service
-    ports:
-      - 9901:8080
+    build:
+      context: ./backend/messaging-service
+      dockerfile: Dockerfile
     expose:
       - "8080"
     networks:
@@ -13,13 +13,29 @@ services:
   notifications-service:
     restart: always
     container_name: notifications-service
-    image: playground/notifications-service
-    ports:
-      - 9902:8080
+    build:
+      context: ./backend/notifications-service
+      dockerfile: Dockerfile
     expose:
       - "8080"
     networks:
       - app-network
+
+  nginx:
+    restart: always
+    build:
+      context: .
+      dockerfile: nginx.dockerfile
+    expose:
+      - "80"
+    ports:
+      - "80:80"
+    depends_on:
+      - messaging-service
+      - notifications-service
+    networks:
+      - app-network
+
 networks:
   app-network:
     driver: bridge
