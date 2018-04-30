@@ -1,0 +1,6 @@
+<h3>Messages</h3>
+<ul>
+  <li *ngFor="let message of messages">
+    <strong>{{message.content}}</strong> - <i>{{message.sender}}</i> <sup>{{message.timestamp}}</sup>
+  </li>
+</ul>

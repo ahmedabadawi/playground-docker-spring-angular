@@ -1,0 +1,6 @@
+<h3>Notifications</h3>
+<ul>
+  <li *ngFor="let notification of notifications">
+    <strong>{{notification.message}}</strong> - {{notification.severity}} <sup>{{notification.timestamp}}</sup>
+  </li>
+</ul>
