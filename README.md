@@ -7,7 +7,8 @@ with multiple docker containers hosting the different services. A web-server
 Angular application and configured to proxy the API traffic to the corresponding
 backend service hosted on its own docker container.
 
-![Single Host Diagram](https://github.com/ahmedabadawi/playground-docker-spring-angular/blob/c3929b44989c6d902d2b6972f0ddce80b07fb7b5/docs/single-host.png)
+![Single Host Diagram](https://github.com/ahmedabadawi/playground-docker-spring-angular/blob/master/docs/single-host.png)
+
 
 ## Build Steps
 1. Clone repository
