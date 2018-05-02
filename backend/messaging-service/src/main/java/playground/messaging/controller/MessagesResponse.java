@@ -2,6 +2,8 @@ package playground.messaging.controller;
 
 import java.util.List;
 
+import playground.messaging.Message;
+
 public class MessagesResponse {
 	private List<Message> messages;
 	

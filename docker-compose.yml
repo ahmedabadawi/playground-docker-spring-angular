@@ -1,5 +1,14 @@
 version: '3'
 services:
+  db:
+    build:
+      context: .
+      dockerfile: mongo.dockerfile
+    expose:
+      - "27017"
+    networks:
+      - app-network
+
   messaging-service:
     restart: always
     container_name: messaging-service
@@ -8,8 +17,11 @@ services:
       dockerfile: Dockerfile
     expose:
       - "8080"
+    depends_on:
+      - db
     networks:
       - app-network
+
   notifications-service:
     restart: always
     container_name: notifications-service
@@ -18,6 +30,8 @@ services:
       dockerfile: Dockerfile
     expose:
       - "8080"
+    depends_on:
+      - db
     networks:
       - app-network
 

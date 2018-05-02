@@ -2,6 +2,8 @@ package playground.notifications.controller;
 
 import java.util.List;
 
+import playground.notifications.Notification;
+
 public class NotificationsResponse {
 	private List<Notification> notifications;
 	

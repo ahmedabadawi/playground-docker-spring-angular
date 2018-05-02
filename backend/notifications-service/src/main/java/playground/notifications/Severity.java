@@ -1,4 +1,4 @@
-package playground.notifications.controller;
+package playground.notifications;
 
 public enum Severity {
 	LOW,

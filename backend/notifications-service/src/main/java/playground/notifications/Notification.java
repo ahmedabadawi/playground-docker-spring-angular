@@ -1,8 +1,12 @@
-package playground.notifications.controller;
+package playground.notifications;
 
 import java.util.Date;
 
+import org.springframework.data.annotation.Id;
+
 public class Notification {
+	@Id
+	private String id;
 	private Date timestamp;
 	private String message;
 	private Severity severity;
@@ -13,6 +17,13 @@ public class Notification {
 		this.message = message;
 		this.timestamp = timestamp;
 		this.severity = severity;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 	public Date getTimestamp() {
